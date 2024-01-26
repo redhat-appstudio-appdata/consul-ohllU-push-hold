@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: consul
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: consul
+    app.kubernetes.io/part-of: consul
+  name: consul
+spec:
+  ports:
+  - port: 8300
+    targetPort: 8300
+  selector:
+    app.kubernetes.io/instance: consul
+status:
+  loadBalancer: {}
